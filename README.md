@@ -1,5 +1,75 @@
 # Домашнее задание ШРИ: Автотесты
 
+✅ http://localhost:3000/hw/store?bug_id=1 : getAllProducts
+
+✅ http://localhost:3000/hw/store?bug_id=2
+```
+router.post('/api/checkout', (req, res) => {
+    const bugId = getBugId(req);
+
+    if (bugId === 2) {
+        res.json({ id: Date.now() });
+    } else {
+        const id = store.createOrder(req.body);
+        const data: CheckoutResponse = { id };
+        res.json(data);
+    }
+});
+```
+
+✅ http://localhost:3000/hw/store?bug_id=3
+```
+router.get('/api/products/:id(\\d+)', (req, res) => {
+    const bugId = getBugId(req);
+
+    let id = Number(req.params.id);
+
+    if(bugId === 3) {
+        id = 0;
+    }
+
+    const product = store.getProductById(id);
+    res.json(product);
+});
+```
+✅ http://localhost:3000/hw/store?bug_id=4
+
+✅ http://localhost:3000/hw/store?bug_id=5 : checkoutEpic
+
+✅ http://localhost:3000/hw/store?bug_id=6 : shoppingCartEpic
+
+✅ http://localhost:3000/hw/store?bug_id=7 : 
+```
+ case 'ADD_TO_CART':
+                const { id, name, price } = action.product;
+
+                if (process.env.BUG_ID !== '7') {
+                    if (!draft.cart[id]) {
+                        draft.cart[id] = { name, count: 0, price };
+                    }
+
+                    draft.cart[id].count++;
+                }
+
+                draft.latestOrderId = undefined;
+                break
+```
+✅ http://localhost:3000/hw/store?bug_id=8 : 
+```
+const alertClass = process.env.BUG_ID !== '8' ? 'alert-success' : 'alert-danger';
+
+```
+✅ http://localhost:3000/hw/store?bug_id=9 : 
+```
+const btnSizeClass = process.env.BUG_ID !== '9' ? 'btn-lg' : 'btn-sm';
+
+```
+✅ http://localhost:3000/hw/store?bug_id=10 : 
+```
+const phoneIsValid = process.env.BUG_ID !== '10' ? PHONE_REGEX.test(phone.trim()) : false;
+    
+```
+
 ## Легенда
 
 Однажды, во время очередной виртуальной прогулки по интернету, кот Шрикс наткнулся на рекламу интернет-магазина зоотоваров. В его глазах загорелся огонек, ведь на сайте красовалась фотография великолепной когтеточки, о которой он давно мечтал.
