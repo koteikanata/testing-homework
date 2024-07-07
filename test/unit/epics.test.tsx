@@ -104,7 +104,7 @@ describe('Epics', () => {
     it('shoppingCartEpic - должен обрабатывать действие CLEAR_CART и очищать корзину', async () => {
         store.dispatch(clearCart());
         await imitateAsync();
-        
+
         const state = store.getState() as ApplicationState;
         expect(state.cart).toEqual({});
         expect(mockCart.setState).toHaveBeenCalled();

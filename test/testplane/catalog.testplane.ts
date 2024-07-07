@@ -4,8 +4,8 @@ describe('Catalog', () => {
     it('кнопка добавления товара в корзину на странице товара должна соответствовать ожиданию', async ({ browser }) => {
         await browser.url(`${root}`);
         const el = await browser.$('.ProductItem-DetailsLink');
-        el.click();
+        await el.click();
 
         await browser.assertView('plain', '.ProductDetails-AddToCart');
     });
-})
+});

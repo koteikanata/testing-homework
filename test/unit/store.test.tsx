@@ -1,5 +1,5 @@
-import { Product, Order, ProductShortInfo, CartItem, CheckoutFormData } from "../../src/common/types";
-import { ExampleStore } from "../../src/server/data";
+import { Product, Order, ProductShortInfo, CartItem, CheckoutFormData } from '../../src/common/types';
+import { ExampleStore } from '../../src/server/data';
 
 const generateTestProducts = (): Product[] => [
     { id: 1, name: 'Product 1', price: 100, description: 'desc 1', material: 'material 1', color: 'red' },

@@ -97,9 +97,8 @@ describe('POST /api/checkout', () => {
         expect(typeof responseBody.id).toBe('number');
 
         // Проверка, что id не является временной меткой
-        const currentTimestamp = Date.now();
         expect(responseBody.id).toBeGreaterThan(0);
-        expect(responseBody.id).toBeLessThan(currentTimestamp);
+        expect(responseBody.id).toBeLessThan(99999);
     });
 });
 

@@ -5,10 +5,11 @@
     "start": "nodemon ./src/server/index.ts",
     "bug-start": "cross-env BUG_ID=10 nodemon ./src/server/index.ts",
     "test": "jest",
+    "test:testplane:gui": "npx testplane gui",
     "build": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
     "prettier": "npx prettier --write ./test",
-    "test-item": "cross-env BUG_ID=6 jest ./test/unit/cart.test.tsx"
+    "test-item": "cross-env BUG_ID=10 jest"
   },
   "dependencies": {
     "@bem-react/classname": "^1.6.0",

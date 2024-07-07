@@ -40,7 +40,7 @@ describe('createRootReducer', () => {
         const newState: ApplicationState = store.getState();
         expect(newState.cart[product.id]).toBeDefined();
     });
-    
+
     it('проверка ADD_TO_CART - должен увеличить количество продукта в корзине', () => {
         store.dispatch({ type: 'ADD_TO_CART', product });
         const newState: ApplicationState = store.getState();
